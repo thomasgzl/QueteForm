@@ -5,9 +5,9 @@ class Form extends Component {
 constructor(props) {
     super(props);
     this.state = {
-      lastname: '',
-      firstname: '',
-      email: '',
+      name: '',
+      poster: '',
+      comment: '',
     }
     this.onChange = this.onChange.bind(this);
     this.submitForm = this.submitForm.bind(this);
@@ -27,7 +27,7 @@ constructor(props) {
       },
       body: JSON.stringify(this.state),
      };
-      const url = "http://92.175.11.66:3001/api/quests/employees/";
+      const url = "http://92.175.11.66:3001/api/quests/movies/";
         
     e.preventDefault();
     fetch(url, config)
@@ -56,10 +56,10 @@ constructor(props) {
        <label htmlFor="lastname">Nom du Film</label>
        <input
          type="text"
-         id="lastname"
-         name="lastname"
+         id="name"
+         name="name"
          onChange={this.onChange}
-         value={this.state.lastname}
+         value={this.state.name}
        />
      </div>
 
@@ -67,21 +67,10 @@ constructor(props) {
        <label htmlFor="firstname">URL du poster</label>
        <input
          type="text"
-         id="firstname"
-         name="firstname"
+         id="poster"
+         name="poster"
          onChange={this.onChange}
          value={this.state.firstname}
-       />
-     </div>
-
-     <div className="form-data">
-       <label htmlFor="email">E-miel</label>
-       <input
-         type="email"
-         id="email"
-         name="email"
-         onChange={this.onChange}
-         value={this.state.email}
        />
      </div>
 
@@ -89,8 +78,8 @@ constructor(props) {
        <label htmlFor="firstname">Décris moi ton film comme tu l'aime!</label>
        <input
          type="text"
-         id="firstname"
-         name="firstname"
+         id="comment"
+         name="comment"
          onChange={this.onChange}
          value={this.state.firstname}
        />
